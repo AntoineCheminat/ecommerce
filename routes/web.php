@@ -100,6 +100,7 @@ PANIER !!!
 
 */
 
+/**
 Route::get('/', [
     'uses' => 'ProductController@index',
     'as' => 'product.index'
@@ -134,6 +135,8 @@ Route::get('/product/delete/{id}', [
     'uses' => 'ProductController@deleteProduct',
     'as' => 'product.delete'
 ]);
+
+*/
 
 /*
 
