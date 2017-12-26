@@ -92,3 +92,55 @@ Validation formulaire upload image
 
 Route::get('photo', 'PhotoController@create');
 Route::post('photo', 'PhotoController@store');
+
+
+/*
+
+PANIER !!!
+
+*/
+
+Route::get('/', [
+    'uses' => 'ProductController@index',
+    'as' => 'product.index'
+]);
+
+Route::get('/product/add/{id}', [
+    'uses' => 'ProductController@addItem',
+    'as' => 'product.add'
+]);
+
+Route::get('/product/cart', [
+    'uses' => 'ProductController@getCart',
+    'as' => 'product.cart'
+]);
+
+Route::get('/product/checkout', [
+    'uses' => 'ProductController@getCheckout',
+    'as' => 'product.checkout'
+]);
+
+Route::post('/product/checkout', [
+    'uses' => 'ProductController@postCheckout',
+    'as' => 'product.postCheckout'
+]);
+
+Route::get('/product/reducebyone/{id}', [
+    'uses' => 'ProductController@reduceByOne',
+    'as' => 'product.reduce'
+]);
+
+Route::get('/product/delete/{id}', [
+    'uses' => 'ProductController@deleteProduct',
+    'as' => 'product.delete'
+]);
+
+/*
+
+Auth
+
+*/
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
