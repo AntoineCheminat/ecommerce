@@ -40,9 +40,6 @@ Route::get('contact', function() {
 Route avec paramètre et transmission à la vue
 */
 
-Route::get('article/{n}', function($n) {
-    return view('article')->withNumero($n);
-})->where('n', '[0-9]+');
 
 Route::get('facture/{n}', function($n) {
     return view('facture')->withNumero($n);
@@ -90,9 +87,28 @@ Route::get('/test-contact', function () {
 Validation formulaire upload image
 */
 
-Route::get('photo', 'PhotoController@create');
+Route::get('photo', 'PhotoController@create')->name('photo');
 Route::post('photo', 'PhotoController@store');
 
+/*
+Produits
+*/
+
+Route::get('products/create', 'ProductController@create');
+Route::get('products', 'ProductController@index')->name('produit');
+Route::post('products', 'ProductController@store');
+Route::get('products/delete/{id}', 'ProductController@delete');
+Route::get('products/update/{id}', 'ProductController@update');
+
+/*
+Messages
+*/
+
+Route::get('messages/create', 'MessageController@create');
+Route::get('messages', 'MessageController@index')->name('message');
+Route::post('messages', 'MessageController@store');
+Route::get('messages/delete/{id}', 'MessageController@delete');
+Route::get('messages/update/{id}', 'MessageController@update');
 
 /*
 

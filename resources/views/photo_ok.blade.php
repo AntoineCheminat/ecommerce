@@ -1,6 +1,6 @@
-@extends('template')
+@extends('layouts.app')
 
-@section('contenu')
+@section('content')
     <br>
     <div class="container">
         <div class="row card text-white bg-dark">

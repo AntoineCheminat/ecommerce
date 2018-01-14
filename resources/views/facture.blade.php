@@ -1,9 +1,5 @@
-@extends('template')
+@extends('layouts.app')
 
-@section('titre')
-    Les factures
-@endsection
-
-@section('contenu')
+@section('content')
     <p>C'est la facture n° {{ $numero }}</p>
 @endsection

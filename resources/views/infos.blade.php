@@ -1,10 +1,6 @@
-@extends('template')
+@extends('layouts.app')
 
-@section('titre')
-    Les articles
-@endsection
-
-@section('contenu')
+@section('content')
 <form action="{{ url('users') }}" method="POST">
     {{ csrf_field() }}
     <label for="nom">Entrez votre nom : </label>

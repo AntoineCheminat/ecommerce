@@ -23,6 +23,6 @@ class ImagesRequest extends FormRequest
      */
     public function rules()
     {
-        return ['image' => 'required|image|dimensions:min_width=100,min_height=100'];
+        return ['image' => 'image|dimensions:min_width=100,min_height=100'];
     }
 }

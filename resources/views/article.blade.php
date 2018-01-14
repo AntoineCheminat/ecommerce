@@ -1,9 +1,5 @@
-@extends('template')
+@extends('layouts.app')
 
-@section('titre')
-    Les articles
-@endsection
-
-@section('contenu')
+@section('content')
     <p>C'est l'article n° {{ $numero }}</p>
 @endsection
